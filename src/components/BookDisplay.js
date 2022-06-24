@@ -6,9 +6,11 @@ function BookDisplay({books, deleteBook}) {
     const displayBooks = books.map ( book => <BookCard book={book} deleteBook={deleteBook} /> )
 
   return (
+
     <div >
         {displayBooks}
     </div>
+    
   )
 }
 

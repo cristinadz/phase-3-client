@@ -26,19 +26,19 @@ function BookForm({addBook}) {
   return (
     <div >
       <p className='lead'>Add a Book</p>
-      <form className = "" onSubmit = {handleSubmit}> 
-        <label> title </label>
-          <input type="text" name="title" value={bookFormData.title} onChange ={e => setBookFormData({...bookFormData, title: e.target.value})}/>
+      <form className = "row g-3" onSubmit = {handleSubmit}> 
+
+          <input className="form-control" type="text" placeholder ="title" name="title" value={bookFormData.title} onChange ={e => setBookFormData({...bookFormData, title: e.target.value})}/>
        
-        <label> image url </label>
-          <input type="text" name="image" value={bookFormData.image} onChange ={e => setBookFormData({...bookFormData, image: e.target.value})}/>
+
+          <input className="form-control" type="text" placeholder = "image url" name="image" value={bookFormData.image} onChange ={e => setBookFormData({...bookFormData, image: e.target.value})}/>
         
-        <label> author </label>
-          <input type="text" name="author" value={bookFormData.author} onChange ={e => setBookFormData({...bookFormData, author: e.target.value})}/>
+ 
+          <input className="form-control" type="text" placeholder = "author" name="author" value={bookFormData.author} onChange ={e => setBookFormData({...bookFormData, author: e.target.value})}/>
        
-        <label> description </label>
-          <textarea type="text" name="description" value={bookFormData.description} onChange ={e => setBookFormData({...bookFormData, description: e.target.value})}/>
-          <button  type="submit">submit</button>
+
+          <textarea className="form-control" type="text" placeholder="description" name="description" value={bookFormData.description} onChange ={e => setBookFormData({...bookFormData, description: e.target.value})}/>
+          <button className="btn btn-primary" type="submit">submit</button>
       </form>
     </div>
   )

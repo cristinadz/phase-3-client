@@ -42,24 +42,6 @@ function deleteBook(id){
 }
 
 
-
-
-
-// function updateFav(bookID){
-//     const matchedBook = allBooks.find( book => {
-
-//         if (bookID === '${book.id}'){
-//             return true
-//         }
-//         else { return false}
-//     })
-//     console.log(matchedBook)
-//     setFavorites([...favorites, matchedBook])
-//     console.log(favorites)
-// }
-
-// on click we get that books ID, then we can set this book.favorites !== 
-// our back end should give me all the books that have the favorite boolean set to true, then I would display this on myList
   return (
     <Router>
         <NavBar />

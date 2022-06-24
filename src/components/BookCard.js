@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState} from 'react'
 
-function BookCard({book, deleteBook, updateFav}) {
+function BookCard({book, deleteBook}) {
   const [favorite, setFavorite] = useState(false)
 
   function handleDelete(id){
@@ -14,13 +14,14 @@ function BookCard({book, deleteBook, updateFav}) {
  }
 
 function handleAddToList(){
+
   fetch(`http://localhost:9292/books/${book.id}`, {
      method: "PATCH",
      headers: { "Content-Type": "application/json" },
-     body: JSON.stringify({favorite: favorite}),
+     body: JSON.stringify({favorite: !favorite}),
   })
      .then((resp) => resp.json())
-     .then((book) => { setFavorite(!book.favorite)
+     .then((book) => { setFavorite(book.favorite)
        console.log(book.favorite)
      });
 }
@@ -48,8 +49,8 @@ function handleAddToList(){
 // };
 
   return (
-    <div className='container-fluid'>
-      <div>
+    <div className="card p-3">
+      <div className = "mb-3">
         <h4>{book.title}</h4>
         <img src={book.image} alt="descriptive text"/>
         <p className='lead'> by {book.author.name} </p>
