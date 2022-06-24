@@ -1,8 +1,13 @@
 import React from 'react'
 
-function MyList() {
+function MyList({books}) {
+
+  let myListBooks = books.map ( book => book.favorites === true )
+  console.log(myListBooks)
   return (
-    <div>MyList</div>
+    <div> 
+
+    </div>
   )
 }
 
