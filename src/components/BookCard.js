@@ -2,7 +2,7 @@ import React from 'react'
 import { useState} from 'react'
 
 function BookCard({book, deleteBook}) {
-  const [favorite, setFavorite] = useState(false)
+  const [favorite, setFavorite] = useState(book.favorite)
 
   function handleDelete(id){
     fetch(`http://localhost:9292/books/${id}`, {
